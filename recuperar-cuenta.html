@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Recuperar Cuenta</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="phone-container">
+
+    <div class="page-header">
+
+        <a href="index.html">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <h2>Recuperar Cuenta</h2>
+
+    </div>
+
+    <form id="recoverForm">
+
+        <div class="input-group">
+
+            <label>Correo electrónico</label>
+
+            <input
+            type="email"
+            id="recoverEmail"
+            placeholder="correo@ejemplo.com">
+
+        </div>
+
+        <button
+        type="submit"
+        class="btn-primary">
+
+            Enviar enlace
+
+        </button>
+
+    </form>
+
+</div>
+
+<script>
+
+const recoverForm =
+document.getElementById("recoverForm");
+
+recoverForm.addEventListener("submit",(e)=>{
+
+    e.preventDefault();
+
+    alert(
+        "Se envió un enlace de recuperación al correo."
+    );
+
+    window.location.href =
+    "index.html";
+
+});
+
+</script>
+
+</body>
+</html>

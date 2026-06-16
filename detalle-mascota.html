@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Detalle Mascota</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="phone-container">
+
+    <div class="page-header">
+
+        <a href="mis-mascotas.html">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <h2>Mi Mascota</h2>
+
+    </div>
+
+    <div class="pet-detail">
+
+        <img
+        src="https://placedog.net/600/400"
+        alt="Mascota">
+
+        <h2>Rocky</h2>
+
+        <span class="pet-status">
+            En casa
+        </span>
+
+    </div>
+
+    <div class="info-card">
+
+        <div class="info-row">
+            <strong>Especie:</strong>
+            <span>Perro</span>
+        </div>
+
+        <div class="info-row">
+            <strong>Raza:</strong>
+            <span>Golden Retriever</span>
+        </div>
+
+        <div class="info-row">
+            <strong>Edad:</strong>
+            <span>3 años</span>
+        </div>
+
+        <div class="info-row">
+            <strong>Color:</strong>
+            <span>Dorado</span>
+        </div>
+
+    </div>
+
+    <div class="actions-container">
+
+        <button
+        class="btn-primary"
+        onclick="window.location.href='qr.html'">
+
+            Generar QR
+
+        </button>
+
+        <div class="share-buttons">
+
+            <button
+            class="share-btn whatsapp"
+            onclick="compartirWhatsApp()">
+
+                <i class="fa-brands fa-whatsapp"></i>
+                WhatsApp
+
+            </button>
+
+            <button
+            class="share-btn facebook"
+            onclick="compartirFacebook()">
+
+                <i class="fa-brands fa-facebook"></i>
+                Facebook
+
+            </button>
+
+        </div>
+
+        <button class="btn-secondary">
+
+            Editar Mascota
+
+        </button>
+
+        <button
+        class="btn-danger"
+        onclick="window.location.href='avistamiento.html'">
+
+            Reportar Avistamiento
+
+        </button>
+
+        <button
+        class="btn-success"
+        onclick="confirmarEncontrada()">
+
+            Marcar como Encontrada
+
+        </button>
+
+    </div>
+
+    <div class="comments-section">
+
+        <h3>Comentarios</h3>
+
+        <div class="comment-card">
+
+            <strong>Carlos Pérez</strong>
+
+            <p>
+                Vi una mascota parecida cerca del parque.
+            </p>
+
+        </div>
+
+        <div class="comment-card">
+
+            <strong>María López</strong>
+
+            <p>
+                Revisaré la zona esta tarde.
+            </p>
+
+        </div>
+
+        <textarea
+        id="commentInput"
+        placeholder="Escribe un comentario..."
+        rows="3"></textarea>
+
+        <button
+        class="btn-primary"
+        onclick="agregarComentario()">
+
+            Comentar
+
+        </button>
+
+        <button
+        class="btn-report-user"
+        onclick="reportarUsuario()">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            Reportar Usuario
+
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function compartirWhatsApp(){
+
+    alert(
+        "Reporte compartido en WhatsApp"
+    );
+
+}
+
+function compartirFacebook(){
+
+    alert(
+        "Reporte compartido en Facebook"
+    );
+
+}
+
+function confirmarEncontrada(){
+
+    const confirmar = confirm(
+        "¿La mascota fue encontrada?"
+    );
+
+    if(confirmar){
+
+        alert(
+            "Mascota marcada como encontrada"
+        );
+
+    }
+
+}
+
+function agregarComentario(){
+
+    const comentario =
+    document.getElementById(
+    "commentInput"
+    );
+
+    if(comentario.value === ""){
+
+        alert(
+            "Escribe un comentario"
+        );
+
+        return;
+
+    }
+
+    alert(
+        "Comentario publicado"
+    );
+
+    comentario.value = "";
+
+}
+
+function reportarUsuario(){
+
+    const confirmar = confirm(
+        "¿Deseas reportar a este usuario?"
+    );
+
+    if(confirmar){
+
+        alert(
+            "Usuario reportado correctamente"
+        );
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

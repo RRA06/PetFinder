@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Escanear QR</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="phone-container">
+
+    <div class="page-header">
+
+        <a href="home.html">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <h2>Escanear QR</h2>
+
+    </div>
+
+    <div class="qr-scan-box">
+
+        <i class="fa-solid fa-qrcode"></i>
+
+        <p>
+            Simulación de escaneo QR
+        </p>
+
+    </div>
+
+    <button
+    class="btn-primary"
+    onclick="escanearQR()">
+
+        Escanear
+
+    </button>
+
+</div>
+
+<script>
+
+function escanearQR(){
+
+    alert(
+        "QR detectado correctamente"
+    );
+
+    window.location.href =
+    "detalle-mascota.html";
+
+}
+
+</script>
+
+</body>
+</html>

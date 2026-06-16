@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reportar Avistamiento</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="phone-container">
+
+    <div class="page-header">
+
+        <a href="home.html">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <h2>Reportar Avistamiento</h2>
+
+    </div>
+
+    <form id="avistamientoForm">
+
+        <div class="input-group">
+
+            <label>Nombre de la mascota</label>
+
+            <input
+            type="text"
+            id="nombreMascota">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Ubicación</label>
+
+            <input
+            type="text"
+            id="ubicacion">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Fecha</label>
+
+            <input
+            type="date"
+            id="fecha">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Comentario</label>
+
+            <textarea
+            rows="5"
+            id="comentario"></textarea>
+
+        </div>
+
+        <button
+        type="submit"
+        class="btn-primary">
+
+            Enviar Reporte
+
+        </button>
+
+    </form>
+
+</div>
+
+<script>
+
+const form =
+document.getElementById(
+"avistamientoForm"
+);
+
+form.addEventListener(
+"submit",
+(e)=>{
+
+    e.preventDefault();
+
+    alert(
+    "Avistamiento registrado correctamente"
+    );
+
+    window.location.href =
+    "home.html";
+
+});
+</script>
+
+</body>
+</html>

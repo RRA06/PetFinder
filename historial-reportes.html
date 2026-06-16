@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Historial</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="phone-container">
+
+    <div class="page-header">
+
+        <a href="perfil.html">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <h2>Historial</h2>
+
+    </div>
+
+    <div class="tabs">
+
+        <button class="tab active">
+            Activos
+        </button>
+
+        <button class="tab">
+            Resueltos
+        </button>
+
+    </div>
+
+    <div class="history-card">
+
+        <img src="https://placedog.net/300/200">
+
+        <div>
+
+            <h3>Rocky</h3>
+
+            <p>Miraflores, Lima</p>
+
+            <small>Hace 2 días</small>
+            
+            <p class="status-review">
+                Pendiente de validación
+            </p>
+        </div>
+
+        <span class="status-active">
+            Activo
+        </span>
+
+    </div>
+
+    <div class="history-card">
+
+        <img src="https://placecats.com/300/200">
+
+        <div>
+
+            <h3>Luna</h3>
+
+            <p>Surco, Lima</p>
+
+            <small>Hace 5 días</small>
+
+            <p class="status-approved">
+                Reporte validado
+            </p>
+        </div>
+
+        <span class="status-solved">
+            Resuelto
+        </span>
+
+    </div>
+
+    <button
+    class="btn-primary"
+    onclick="exportarPDF()">
+
+        Exportar PDF
+
+    </button>
+
+</div>
+
+<script>
+
+function exportarPDF(){
+
+    alert(
+        "Historial exportado en PDF correctamente"
+    );
+
+}
+
+</script>
+
+</body>
+</html>

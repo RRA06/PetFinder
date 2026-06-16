@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mapa - PetFinder</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link
+rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="phone-container">
+
+    <div class="page-header">
+
+        <h2>Mapa de Mascotas</h2>
+
+    </div>
+
+    <div id="map"></div>
+
+    <button
+    class="btn-primary"
+    onclick="obtenerUbicacion()">
+
+        Obtener mi ubicación
+
+    </button>
+
+</div>
+
+<nav class="bottom-nav">
+
+    <a href="home.html">
+        <i class="fa-solid fa-house"></i>
+        <span>Inicio</span>
+    </a>
+
+    <a href="buscar.html">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Buscar</span>
+    </a>
+
+    <a href="reportar.html">
+        <i class="fa-solid fa-circle-plus"></i>
+        <span>Reportar</span>
+    </a>
+
+    <a href="mapa.html" class="active">
+        <i class="fa-solid fa-map"></i>
+        <span>Mapa</span>
+    </a>
+
+    <a href="perfil.html">
+        <i class="fa-solid fa-user"></i>
+        <span>Perfil</span>
+    </a>
+
+</nav>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="js/mapa.js"></script>
+
+<script>
+
+function obtenerUbicacion(){
+
+    if(navigator.geolocation){
+
+        navigator.geolocation.getCurrentPosition(
+
+            function(position){
+
+                alert(
+                    "Ubicación obtenida correctamente"
+                );
+
+            },
+
+            function(){
+
+                alert(
+                    "No se pudo obtener la ubicación"
+                );
+
+            }
+
+        );
+
+    }else{
+
+        alert(
+            "Tu navegador no soporta geolocalización"
+        );
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mis Mascotas - PetFinder</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="phone-container">
+
+        <div class="page-header">
+
+            <a href="perfil.html">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+
+            <h2>Mis Mascotas</h2>
+
+        </div>
+
+        <div class="pets-list">
+
+            <div
+                class="pet-card"
+                onclick="window.location.href='detalle-mascota.html'">
+
+                <img src="https://placedog.net/300/300" alt="Rocky">
+
+                <div class="pet-info">
+
+                    <h3>Rocky</h3>
+
+                    <p>Golden Retriever</p>
+
+                    <span class="pet-status">
+                        En casa
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div
+                class="pet-card"
+                onclick="window.location.href='detalle-mascota.html'">
+
+                <img src="https://placecats.com/300/300" alt="Luna">
+
+                <div class="pet-info">
+
+                    <h3>Luna</h3>
+
+                    <p>Gato Persa</p>
+
+                    <span class="pet-status lost">
+                        Perdida
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <button
+            class="floating-btn"
+            onclick="window.location.href='crear-mascota.html'">
+
+            <i class="fa-solid fa-plus"></i>
+
+        </button>
+
+    </div>
+
+    <nav class="bottom-nav">
+
+        <a href="home.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Inicio</span>
+        </a>
+
+        <a href="buscar.html">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Buscar</span>
+        </a>
+
+        <a href="reportar.html">
+            <i class="fa-solid fa-circle-plus"></i>
+            <span>Reportar</span>
+        </a>
+
+        <a href="mapa.html">
+            <i class="fa-solid fa-map"></i>
+            <span>Mapa</span>
+        </a>
+
+        <a href="perfil.html" class="active">
+            <i class="fa-solid fa-user"></i>
+            <span>Perfil</span>
+        </a>
+
+    </nav>
+
+</body>
+
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Buscar Mascotas</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="phone-container">
+
+    <div class="page-header">
+
+        <h2>Buscar Mascotas</h2>
+
+    </div>
+
+    <div class="search-box">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Buscar por nombre o raza">
+
+    </div>
+
+    <div class="filters">
+
+        <select id="filtroEspecie">
+
+            <option value="Todos">
+                Todas las especies
+            </option>
+
+            <option value="Perro">
+                Perro
+            </option>
+
+            <option value="Gato">
+                Gato
+            </option>
+
+        </select>
+
+        <select id="filtroDistancia">
+
+            <option value="Todos">
+                Todas las distancias
+            </option>
+
+            <option value="1">
+                1 km
+            </option>
+
+            <option value="3">
+                3 km
+            </option>
+
+            <option value="5">
+                5 km
+            </option>
+
+            <option value="10">
+                10 km
+            </option>
+
+        </select>
+
+        <select id="filtroTamano">
+
+            <option value="Todos">
+                Todos los tamaños
+            </option>
+
+            <option value="Pequeño">
+                Pequeño
+            </option>
+
+            <option value="Mediano">
+                Mediano
+            </option>
+
+            <option value="Grande">
+                Grande
+            </option>
+
+        </select>
+
+    </div>
+
+    <div
+        class="search-results"
+        id="resultsContainer">
+    </div>
+
+</div>
+
+<nav class="bottom-nav">
+
+    <a href="home.html">
+        <i class="fa-solid fa-house"></i>
+        <span>Inicio</span>
+    </a>
+
+    <a href="buscar.html" class="active">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Buscar</span>
+    </a>
+
+    <a href="reportar.html">
+        <i class="fa-solid fa-circle-plus"></i>
+        <span>Reportar</span>
+    </a>
+
+    <a href="mapa.html">
+        <i class="fa-solid fa-map"></i>
+        <span>Mapa</span>
+    </a>
+
+    <a href="perfil.html">
+        <i class="fa-solid fa-user"></i>
+        <span>Perfil</span>
+    </a>
+
+</nav>
+
+<script>
+
+const mascotas = [
+
+{
+    nombre:"Rocky",
+    raza:"Golden Retriever",
+    especie:"Perro",
+    tamano:"Grande",
+    distancia:2,
+    foto:"https://placedog.net/400/300"
+},
+
+{
+    nombre:"Max",
+    raza:"Labrador",
+    especie:"Perro",
+    tamano:"Grande",
+    distancia:5,
+    foto:"https://placedog.net/401/300"
+},
+
+{
+    nombre:"Luna",
+    raza:"Persa",
+    especie:"Gato",
+    tamano:"Pequeño",
+    distancia:1,
+    foto:"https://placecats.com/400/300"
+},
+
+{
+    nombre:"Michi",
+    raza:"Siamés",
+    especie:"Gato",
+    tamano:"Mediano",
+    distancia:8,
+    foto:"https://placecats.com/401/300"
+}
+
+];
+
+const buscador =
+document.getElementById("searchInput");
+
+const filtroEspecie =
+document.getElementById("filtroEspecie");
+
+const filtroDistancia =
+document.getElementById("filtroDistancia");
+
+const filtroTamano =
+document.getElementById("filtroTamano");
+
+const contenedor =
+document.getElementById("resultsContainer");
+
+function mostrarMascotas(lista){
+
+    contenedor.innerHTML = "";
+
+    if(lista.length === 0){
+
+        contenedor.innerHTML = `
+        <p style="text-align:center;color:#777;">
+            No se encontraron resultados
+        </p>
+        `;
+
+        return;
+
+    }
+
+    lista.forEach(mascota=>{
+
+        contenedor.innerHTML += `
+
+        <div class="result-card" onclick="window.location.href='detalle-mascota.html'">
+
+            <img src="${mascota.foto}">
+
+            <div class="result-info">
+
+                <h3>${mascota.nombre}</h3>
+
+                <p>${mascota.raza}</p>
+
+                <p>${mascota.tamano}</p>
+
+                <p>${mascota.distancia} km</p>
+
+                <span class="lost-badge">
+                    ${mascota.especie}
+                </span>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+function aplicarFiltros(){
+
+    const texto =
+    buscador.value.toLowerCase();
+
+    const especie =
+    filtroEspecie.value;
+
+    const distancia =
+    filtroDistancia.value;
+
+    const tamano =
+    filtroTamano.value;
+
+    const resultado =
+    mascotas.filter(mascota => {
+
+        const coincideTexto =
+
+            mascota.nombre
+            .toLowerCase()
+            .includes(texto)
+
+            ||
+
+            mascota.raza
+            .toLowerCase()
+            .includes(texto);
+
+        const coincideEspecie =
+
+            especie === "Todos"
+
+            ||
+
+            mascota.especie === especie;
+
+        const coincideTamano =
+
+            tamano === "Todos"
+
+            ||
+
+            mascota.tamano === tamano;
+
+        const coincideDistancia =
+
+            distancia === "Todos"
+
+            ||
+
+            mascota.distancia <= Number(distancia);
+
+        return coincideTexto
+            && coincideEspecie
+            && coincideTamano
+            && coincideDistancia;
+
+    });
+
+    mostrarMascotas(resultado);
+
+}
+
+mostrarMascotas(mascotas);
+
+buscador.addEventListener(
+    "keyup",
+    aplicarFiltros
+);
+
+filtroEspecie.addEventListener(
+    "change",
+    aplicarFiltros
+);
+
+filtroDistancia.addEventListener(
+    "change",
+    aplicarFiltros
+);
+
+filtroTamano.addEventListener(
+    "change",
+    aplicarFiltros
+);
+
+</script>
+
+</body>
+</html>

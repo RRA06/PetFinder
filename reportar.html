@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reportar Mascota Perdida</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="phone-container">
+
+    <div class="page-header">
+
+        <a href="home.html">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <h2>Reportar Mascota</h2>
+
+    </div>
+
+    <form id="reportForm">
+
+        <div class="report-photo">
+
+            <img
+            id="previewReport"
+            src="https://via.placeholder.com/300x200"
+            alt="Mascota">
+
+            <input
+            type="file"
+            id="reportPhoto"
+            accept="image/*">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Nombre de la mascota</label>
+
+            <input
+            type="text"
+            id="petName">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Última ubicación</label>
+
+            <input
+            type="text"
+            id="location">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Fecha de desaparición</label>
+
+            <input
+            type="date"
+            id="dateLost">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Recompensa (opcional)</label>
+
+            <input
+            type="number"
+            id="reward"
+            placeholder="S/">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Descripción</label>
+
+            <textarea
+            id="description"
+            rows="5"></textarea>
+
+        </div>
+
+        <button
+        type="submit"
+        class="btn-danger">
+
+            Publicar Reporte
+
+        </button>
+
+    </form>
+
+</div>
+
+<script src="js/reportes.js"></script>
+
+</body>
+</html>

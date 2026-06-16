@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Editar Perfil</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="phone-container">
+
+    <div class="page-header">
+
+        <a href="perfil.html">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+
+        <h2>Editar Perfil</h2>
+
+    </div>
+
+    <form id="editProfileForm">
+
+        <div class="profile-edit-photo">
+
+            <img
+            id="previewProfile"
+            src="https://i.pravatar.cc/200"
+            alt="Perfil">
+
+            <input
+            type="file"
+            id="profilePhoto"
+            accept="image/*">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Nombre completo</label>
+
+            <input
+            type="text"
+            id="name"
+            value="María González">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Correo electrónico</label>
+
+            <input
+            type="email"
+            id="email"
+            value="mariagonzalez@gmail.com">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Teléfono</label>
+
+            <input
+            type="tel"
+            id="phone"
+            value="999888777">
+
+        </div>
+
+        <button
+        type="submit"
+        class="btn-primary">
+
+            Guardar cambios
+
+        </button>
+
+    </form>
+
+</div>
+
+<script src="js/editar-perfil.js"></script>
+
+</body>
+</html>
