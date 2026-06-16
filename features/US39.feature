@@ -13,3 +13,5 @@ Then el sistema muestra instrucciones de utilización
 Scenario: Consulta de pasos
 
 Given que el usuario visualiza la guía
+When revisa el contenido
+Then obtiene información sobre las funcionalidades principales
